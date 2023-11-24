@@ -1,0 +1,81 @@
+.relativeCss>nav{
+
+    background-image: url('../src/assets/images/accueil_1.JPG');
+    background-size: cover;
+}
+
+.displayCss{
+    display: none;
+    width: 0px;
+    height: 0px;
+}
+.noneWidth>a{
+  width: 0px;
+}
+.opacity{
+    background-color: black;
+    z-index: 18;
+    
+}
+
+@keyframes moveBand {
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+/*MODAL*/
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .modal.open {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+  }
+/*MODAL*/
+.sticky-navbar {
+  position: relative; /* Barre de navigation en position relative */
+}
+
+.sticky-nav {
+  position: sticky; /* Barre de navigation collante */
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  /* Autres styles pour la barre de navigation collante */
+}
+
+.navAnimate{
+  animation-name: slideDown;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+}
+
+/* Définition de l'animation origin-top */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
