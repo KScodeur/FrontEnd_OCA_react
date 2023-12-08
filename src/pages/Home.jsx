@@ -22,7 +22,7 @@ export default function Home() {
         {Images.map((gallerie, index) => (
                         <img
                         key={index}
-                          src={gallerie} className='sm:w-[150px] md:w-[200px] lg:w-[300px]'
+                          src={gallerie} className='sm:w-[150px] md:w-[200px] lg:w-[300px] bg-cover'
                         />
                       ))}
         </GalleryHome>

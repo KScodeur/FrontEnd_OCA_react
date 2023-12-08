@@ -6,7 +6,7 @@ export default function APropos() {
 
       <div className='bg-[#FEF549] pb-20 sm:pb-10' id='a_propos'>
           <div className='lg:py-10 sm:py-2'>
-          <h1 className='flex justify-center mt-6 mb-10 font-bold lg:text-3xl sm:text-2xl text-[#343a40]'>A propos</h1>
+          <h1 className='flex justify-center mt-6 mb-10 font-bold lg:text-5xl sm:text-2xl text-[#343a40]'>À propos</h1>
           </div>
           <div className='lg:flex sm:block sm:place-item-center sm:mx-auto md:justify-around lg:px-20'>
               <div className='lg:pl-5 px-20 sm:px-10 border-[#FEF549] '>

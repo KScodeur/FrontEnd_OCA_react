@@ -1,0 +1,57 @@
+// le lien dropbox
+/*<img src="https://dl.dropboxusercontent.com/scl/fi/8eorj5td1iyd2hy7jqcrf/IMG_9011.JPG?rlkey=rktkarteubo56v7clpbtm1x4r&dl=0" alt="" className='lg:w-[100px] sm:w-[50px] md:'/>
+
+
+{formationsWithNotes.map(formation => (
+  <tr key={formation.formationId} className='border'>
+    <td className=''>{formation.formationName}</td>
+      {formation.notes.map(note => (
+        <td key={note.id}>
+          <td>{note.assiduite}</td>
+          <td>{note.performance}</td>
+          <td>{note.commentaire}</td>
+        </td>
+      ))}
+    
+  </tr>))}
+
+//le lien drive
+<img src="https://drive.google.com/uc?id=14Wimh-lpb77D2OXKcMoL0enSfRXQF7Jl" alt="" className='w-[120px] h-[120px] rounded-full '/>
+// la section image des enfants
+{
+  student.imageData && (<img src={`http://localhost:3000/${student.imageData}`} alt={`${student.imageData}`} className='sm:w-[120px] sm:h-[120px] lg:w-[300px] lg:h-[200px] rounded-full'/>)
+}
+
+//dans le backend
+@UseInterceptors(FileInterceptor('imageData', {
+  storage: diskStorage({
+    destination: './upload',
+    filename: (req, file, cb) => {
+      const randomName = Array(32).fill(null).map(() => (Math.round(Math.random() * 16)).toString(16)).join('');
+      return cb(null, `${randomName}${extname(file.originalname)}`);
+    },
+  }),
+}))
+async create(@UploadedFile() file, @Body() createEleveDto: CreateEleveDto): Promise<any> {
+  try {
+    console.log(file.path);
+    let imageData = file.path
+    
+    return await this.elevesService.create(createEleveDto.parentId, createEleveDto, imageData);
+    console.log(createEleveDto);
+    return { success: true, data: 'result' };
+  } catch (error) {
+    return { success: false, error: error.message };
+  }
+};
+
+https://drive.google.com/uc?id=14Wimh-lpb77D2OXKcMoL0enSfRXQF7Jl
+
+EBOH Anne https://drive.google.com/uc?id=1PmCKf6Wo9CvyT65EBT3kz9HL0y1M_J0e
+ABOTSI beni https://drive.google.com/uc?id=1yzUSckBVEjtUSPNZY8B6xRpxmqSoI-mT
+EBOH caleb https://drive.google.com/uc?id=1r7I94Y_rfjoTD-S-A-8VlUzYn-kE59Z6
+ABOTSI Godson https://drive.google.com/uc?id=14wK8D8WEntiglL8D_3amQ13MXV7KdgHz
+ABOTSI Godwin https://drive.google.com/uc?id=1M6ox5WM43wualLcGTaw87HbhVEpv5oAw
+EBOH grace https://drive.google.com/uc?id=1-F5z-4VnNSrhzSfGXExLm_TgKJm3Zh6h
+
+*/
